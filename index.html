@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DropSpot — Вход в мир крипто-эйрдропов</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: #f4f4f4;
+    }
+    header {
+      background: linear-gradient(to right, #ff0000, #ffcc00);
+      padding: 50px 20px;
+      text-align: center;
+      color: black;
+    }
+    header h1 {
+      font-size: 3.2rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      padding: 15px 0;
+    }
+    nav a {
+      color: #ffcc00;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ff0000;
+    }
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border-radius: 16px;
+    }
+    h2 {
+      color: #ffcc00;
+    }
+    .chart-container {
+      position: relative;
+      height: 300px;
+      margin-top: 30px;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 30px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DropSpot</h1>
+    <p>Портал к самым прибыльным airdrop'ам и ранним крипто-проектам</p>
+  </header>
+
+  <nav>
+    <a href="#about">О проекте</a>
+    <a href="#results">Графики</a>
+    <a href="#projects">Проекты</a>
+    <a href="#join">Контакты</a>
+  </nav>
+
+  <section id="about">
+    <h2>Что такое DropSpot?</h2>
+    <p>DropSpot — это твой личный гид в мире airdrop'ов, ретро-дропов и перспективных крипто-тестнетов. Мы собираем и анализируем проекты, которые могут дать X10, X50 и даже X100 на старте. Ты получаешь информацию, проходишь задания — и потенциально получаешь токены бесплатно.</p>
+    <p>Мы следим за трендами, инсайдами и выходами на биржи. Участвуешь раньше — получаешь больше.</p>
+  </section>
+
+  <section id="results">
+    <h2>Результаты топовых airdrop'ов</h2>
+    <div class="chart-container">
+      <canvas id="airdropChart"></canvas>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Проекты, которые выстрелили</h2>
+    <ul>
+      <li><strong>Arbitrum</strong> — $1.2K в среднем на пользователя, выход на Binance, Kraken</li>
+      <li><strong>StarkNet (ожидается)</strong> — активный тестнет, большие инвестиции</li>
+      <li><strong>Celestia</strong> — $2.5K для валидаторов, топовая активность</li>
+      <li><strong>Sei</strong> — airdrop + CEX листинг (Binance, Bybit)</li>
+      <li><strong>ZKSync</strong> — в ожидании дропа, активно набирает ТВЛ</li>
+    </ul>
+  </section>
+
+  <section id="join">
+    <h2>Хочешь быть в курсе первым?</h2>
+    <p>Подписывайся на наш Telegram-канал <a href="https://t.me/dropspot" target="_blank" style="color: #ffcc00;">@dropspot</a> и участвуй в движении!</p>
+  </section>
+
+  <footer>
+    <p>© 2025 DropSpot. Все права защищены.</p>
+  </footer>
+
+  <script>
+    const ctx = document.getElementById('airdropChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Arbitrum', 'Celestia', 'Sei', 'ZkSync (ожидается)', 'StarkNet'],
+        datasets: [{
+          label: 'Средний доход ($)',
+          data: [1200, 2500, 600, 0, 0],
+          backgroundColor: ['#ff0000', '#ffcc00', '#cc0000', '#333333', '#444444'],
+          borderRadius: 10
+        }]
+      },
+      options: {
+        plugins: {
+          legend: {
+            labels: { color: '#fff' }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { color: '#fff' }
+          },
+          x: {
+            ticks: { color: '#fff' }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
